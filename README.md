@@ -17,3 +17,13 @@
 - Ionic DOES NOT use Angular Router
 - a stack of Pages is used
 
+## Lifecycle
+
+- ionViewCanEnter - navigation guard (boolean/Promise) 
+- ionViewDidLoad - not fired when cached
+- ionViewWillEnter - always fired
+- ionViewDidEnter - always fired
+- ionViewCanLeave
+- ionViewWillLeave 
+- ionViewDidLeave 
+- ionViewWillUnload - page about to be destroyed 
