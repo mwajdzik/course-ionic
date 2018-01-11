@@ -1,23 +1,19 @@
 import {Component} from '@angular/core';
 import {IonicPage, NavController, NavParams} from 'ionic-angular';
-import {UserPage} from "./user/user";
 
 @IonicPage()
 @Component({
-  selector: 'page-users',
-  templateUrl: 'users.html',
+  selector: 'page-user',
+  templateUrl: 'user.html',
 })
-export class UsersPage {
+export class UserPage {
+
+  name: string;
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 
   ionViewDidLoad() {
-  }
-
-  onLoadUser(name: string) {
-    this.navCtrl.push(UserPage, {
-      name: name
-    });
+    this.name = this.navParams.get('name');
   }
 }

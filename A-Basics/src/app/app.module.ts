@@ -9,12 +9,14 @@ import {TabsPage} from '../pages/tabs/tabs';
 import {StatusBar} from '@ionic-native/status-bar';
 import {SplashScreen} from '@ionic-native/splash-screen';
 import {UsersPage} from "../pages/users/users";
+import {UserPage} from "../pages/users/user/user";
 
 @NgModule({
   declarations: [
     MyApp,
     HomePage,
     UsersPage,
+    UserPage,
     TabsPage
   ],
   imports: [
@@ -25,6 +27,7 @@ import {UsersPage} from "../pages/users/users";
   entryComponents: [
     MyApp,
     UsersPage,
+    UserPage,
     HomePage,
     TabsPage
   ],
