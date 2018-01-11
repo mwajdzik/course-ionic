@@ -16,4 +16,8 @@ export class UserPage {
   ionViewDidLoad() {
     this.name = this.navParams.get('name');
   }
+
+  onBack() {
+    this.navCtrl.pop();
+  }
 }
