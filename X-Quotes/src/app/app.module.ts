@@ -10,10 +10,12 @@ import {LibraryPage} from "../pages/library/library";
 import {QuotesPage} from "../pages/quotes/quotes";
 import {SettingsPage} from "../pages/settings/settings";
 import {QuotePage} from "../pages/quote/quote";
+import {TabsPage} from "../pages/tabs/tabs";
 
 @NgModule({
   declarations: [
     MyApp,
+    TabsPage,
     LibraryPage,
     QuotesPage,
     QuotePage,
@@ -27,6 +29,7 @@ import {QuotePage} from "../pages/quote/quote";
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
+    TabsPage,
     LibraryPage,
     QuotesPage,
     QuotePage,

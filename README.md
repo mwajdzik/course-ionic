@@ -15,7 +15,7 @@
 ## Routing
 
 - Ionic DOES NOT use Angular Router
-- a stack of Pages is used
+- a stack of Pages is used (can be Single Stack or Multiple Stacks if tabs are used)
 
 ## Lifecycle
 
