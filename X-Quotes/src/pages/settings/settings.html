@@ -8,4 +8,16 @@
 </ion-header>
 
 <ion-content padding>
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <ion-label>Alternative Background</ion-label>
+      </ion-col>
+      <ion-col col-auto>
+        <ion-toggle [checked]="isToggle()"
+                    (ionChange)="onToggle($event)">
+        </ion-toggle>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 </ion-content>

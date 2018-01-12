@@ -3,6 +3,7 @@ import {IonicPage, ModalController, NavController, NavParams} from 'ionic-angula
 import {Quote} from "../../data/quote.interface";
 import {QuotesService} from "../../services/quotes.service";
 import {QuotePage} from "../quote/quote";
+import {SettingsService} from "../../services/settings.service";
 
 @IonicPage()
 @Component({
@@ -16,7 +17,8 @@ export class FavoritesPage {
   constructor(public navCtrl: NavController,
               public navParams: NavParams,
               private modalController: ModalController,
-              private quotesService: QuotesService) {
+              private quotesService: QuotesService,
+              private settingsService: SettingsService) {
   }
 
   ionViewDidLoad() {
@@ -44,5 +46,9 @@ export class FavoritesPage {
   private removeFromFavorites(quote: Quote) {
     this.quotesService.removeQuoteFromFavorites(quote);
     this.ionViewWillEnter();
+  }
+
+  getBackground() {
+    return this.settingsService.isAltBackground() ? 'altQuoteBackground' : 'quoteBackground';
   }
 }
