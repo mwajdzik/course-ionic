@@ -18,4 +18,10 @@ export class QuotesService {
   public getFavoritesQuotes(): Quote[] {
     return this.favoriteQuotes.slice();
   }
+
+  public isFavorite(quote: Quote): boolean {
+    return this.favoriteQuotes.some((q: Quote) => {
+      return q.id == quote.id;
+    });
+  }
 }

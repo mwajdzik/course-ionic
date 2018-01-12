@@ -26,4 +26,14 @@
 - ionViewCanLeave
 - ionViewWillLeave 
 - ionViewDidLeave 
-- ionViewWillUnload - page about to be destroyed 
+- ionViewWillUnload - page about to be destroyed
+
+## View hooks - can be used eg. with modals
+
+- willEnter
+- didEnter
+- willLeave
+- didLeave
+- willUnload
+- onWillDismiss
+- onDidDismiss 
