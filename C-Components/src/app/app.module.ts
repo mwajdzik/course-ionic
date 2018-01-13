@@ -8,12 +8,16 @@ import {ListPage} from '../pages/list/list';
 import {StatusBar} from '@ionic-native/status-bar';
 import {SplashScreen} from '@ionic-native/splash-screen';
 import {ButtonsPage} from "../pages/buttons/buttons";
+import {GridsPage} from "../pages/girds/grids";
+import {GesturesPage} from "../pages/gestures/gestures";
 
 @NgModule({
   declarations: [
     MyApp,
+    ListPage,
     ButtonsPage,
-    ListPage
+    GridsPage,
+    GesturesPage
   ],
   imports: [
     BrowserModule,
@@ -22,8 +26,10 @@ import {ButtonsPage} from "../pages/buttons/buttons";
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
+    ListPage,
     ButtonsPage,
-    ListPage
+    GridsPage,
+    GesturesPage
   ],
   providers: [
     StatusBar,

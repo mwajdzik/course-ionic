@@ -3,21 +3,94 @@
     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
-    <ion-title>List</ion-title>
+    <ion-title>Lists</ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content>
-  <ion-list>
-    <button ion-item *ngFor="let item of items" (click)="itemTapped($event, item)">
-      <ion-icon [name]="item.icon" item-start></ion-icon>
-      {{ item.title }}
-      <div class="item-note" item-end>
-        {{ item.note }}
-      </div>
-    </button>
-  </ion-list>
-  <div *ngIf="selectedItem" padding>
-    You navigated here from <b>{{ selectedItem.title }}</b>
-  </div>
+  <ion-row>
+    <ion-col>
+      <h3>Without ion-list</h3>
+      <ion-item>A normal item</ion-item>
+      <button ion-item>A button itemt</button>
+    </ion-col>
+  </ion-row>
+
+  <ion-row>
+    <ion-col>
+      <h3>Reorder</h3>
+      <ion-list reorder="true" (ionItemReorder)="reorderItems($event)">
+        <ion-item *ngFor="let name of items">{{ name }}</ion-item>
+      </ion-list>
+    </ion-col>
+  </ion-row>
+
+  <ion-row>
+    <ion-col>
+      <h3>List</h3>
+      <ion-list>
+        <ion-item>A normal item</ion-item>
+
+        <button ion-item>A button item</button>
+
+        <ion-item>
+          <ion-icon name="star"></ion-icon>
+          An icon item
+        </ion-item>
+
+        <ion-item>
+          <ion-icon name="star" item-left></ion-icon>
+          An icon item (item-left)
+        </ion-item>
+
+        <ion-item>
+          <ion-icon name="star" item-right></ion-icon>
+          An icon item (item-right)
+        </ion-item>
+
+        <ion-item>
+          <ion-icon name="star" item-left></ion-icon>
+          <h1>Heading</h1>
+          <p text-wrap="">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium dolor laboriosam libero
+            necessitatibus quaerat! A dolorum magnam quasi quo quos repudiandae ullam voluptatem! Ab alias dolores est
+            ipsa possimus quod.</p>
+        </ion-item>
+
+        <ion-item>
+          <ion-avatar item-left>
+            <img src="http://lorempixel.com/400/200/sports">
+          </ion-avatar>
+          <h1>Heading</h1>
+          <p text-wrap="">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium dolor laboriosam libero
+            necessitatibus quaerat! A dolorum magnam quasi quo quos repudiandae ullam voluptatem! Ab alias dolores est
+            ipsa possimus quod.</p>
+        </ion-item>
+      </ion-list>
+    </ion-col>
+  </ion-row>
+
+  <ion-row>
+    <ion-col>
+      <h3>Dividers</h3>
+      <ion-item-group>
+        <ion-item-divider>A</ion-item-divider>
+        <ion-item>Apples</ion-item>
+        <ion-item>Avocados</ion-item>
+        <ion-item-divider>B</ion-item-divider>
+        <ion-item>Bananas</ion-item>
+        <ion-item>Berries</ion-item>
+      </ion-item-group>
+    </ion-col>
+  </ion-row>
+
+  <ion-row>
+    <ion-col>
+      <h3>Headers</h3>
+      <ion-list>
+        <ion-list-header>Privacy</ion-list-header>
+        <ion-item>Tracking</ion-item>
+        <ion-item>Personal Images</ion-item>
+      </ion-list>
+    </ion-col>
+  </ion-row>
 </ion-content>

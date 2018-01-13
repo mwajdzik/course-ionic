@@ -3,16 +3,38 @@
     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
-    <ion-title>Home</ion-title>
+    <ion-title>Buttons</ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
-  <h1>Buttons</h1>
-
   <ion-row>
     <button ion-button color="primary" (click)="onClick($event)">Primary</button>
     <button ion-button color="secondary" (click)="onClick($event)">Secondary</button>
     <button ion-button color="danger" (click)="onClick($event)">Danger</button>
+  </ion-row>
+  <ion-row>
+    <button ion-button outline (click)="onClick($event)">Outline</button>
+    <button ion-button clear (click)="onClick($event)">Clear</button>
+    <button ion-button round (click)="onClick($event)">Round</button>
+  </ion-row>
+  <ion-row>
+    <button ion-button outline block (click)="onClick($event)">Block</button>
+  </ion-row>
+  <ion-row>
+    <button ion-button large (click)="onClick($event)">Large</button>
+    <button ion-button medium (click)="onClick($event)">Medium</button>
+    <button ion-button small (click)="onClick($event)">Small</button>
+  </ion-row>
+  <ion-row>
+    <button ion-button icon-only (click)="onClick($event)">
+      <ion-icon name="home"></ion-icon>
+    </button>
+    <button ion-button icon-left (click)="onClick($event)">
+      <ion-icon name="home"></ion-icon>Home
+    </button>
+    <button ion-button icon-right (click)="onClick($event)">
+      Home<ion-icon name="home"></ion-icon>
+    </button>
   </ion-row>
 </ion-content>
