@@ -1,0 +1,18 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Home</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <h1>Buttons</h1>
+
+  <ion-row>
+    <button ion-button color="primary" (click)="onClick($event)">Primary</button>
+    <button ion-button color="secondary" (click)="onClick($event)">Secondary</button>
+    <button ion-button color="danger" (click)="onClick($event)">Danger</button>
+  </ion-row>
+</ion-content>
