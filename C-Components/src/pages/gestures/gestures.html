@@ -8,5 +8,18 @@
 </ion-header>
 
 <ion-content padding>
-  <div class="gestures"></div>
+  <div class="gestures"
+       (click)="onClick()">
+    Every click
+  </div>
+
+  <div class="gestures"
+       (tap)="onTap()">
+    Short click
+  </div>
+
+  <div class="gestures"
+       (press)="onPress()">
+    Long click
+  </div>
 </ion-content>

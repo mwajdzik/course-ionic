@@ -9,4 +9,16 @@ export class GesturesPage {
 
   constructor(public navCtrl: NavController) {
   }
+
+  onClick() {
+    console.log('Clicked or touched');
+  }
+
+  onTap() {
+    console.log('Tapped');
+  }
+
+  onPress() {
+    console.log('Pressed');
+  }
 }
