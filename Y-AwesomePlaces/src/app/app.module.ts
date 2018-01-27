@@ -5,6 +5,7 @@ import {SplashScreen} from '@ionic-native/splash-screen';
 import {StatusBar} from '@ionic-native/status-bar';
 import {AgmCoreModule} from '@agm/core';
 import {maps} from "../../../.hidden/google-maps";
+import {Camera} from "@ionic-native/camera";
 
 import {MyApp} from './app.component';
 import {HomePage} from '../pages/home/home';
@@ -12,6 +13,7 @@ import {PlacePage} from "../pages/place/place";
 import {AddPlacePage} from "../pages/add-place/add-place";
 import {SetLocationPage} from "../pages/set-location/set-location";
 import {Geolocation} from "@ionic-native/geolocation";
+import {PlacesServices} from "../services/places";
 
 @NgModule({
   declarations: [
@@ -24,9 +26,7 @@ import {Geolocation} from "@ionic-native/geolocation";
   imports: [
     BrowserModule,
     IonicModule.forRoot(MyApp),
-    AgmCoreModule.forRoot({
-      apiKey: maps.apiKey
-    })
+    AgmCoreModule.forRoot({apiKey: maps.apiKey})
   ],
   bootstrap: [
     IonicApp
@@ -41,7 +41,9 @@ import {Geolocation} from "@ionic-native/geolocation";
   providers: [
     StatusBar,
     SplashScreen,
+    Camera,
     Geolocation,
+    PlacesServices,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })

@@ -1,8 +1,7 @@
 import {Component} from '@angular/core';
-import {IonicPage, NavController, NavParams, ViewController} from 'ionic-angular';
+import {NavController, NavParams, ViewController} from 'ionic-angular';
 import {Location} from "../../models/location";
 
-@IonicPage()
 @Component({
   selector: 'page-set-location',
   templateUrl: 'set-location.html',

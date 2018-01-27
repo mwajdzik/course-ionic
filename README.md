@@ -57,3 +57,9 @@
 
 - npm install @agm/core --save
 - https://angular-maps.com/guides/getting-started/
+
+
+## Native
+
+- https://ionicframework.com/docs/native/geolocation/
+- https://ionicframework.com/docs/native/camera/
