@@ -53,3 +53,7 @@
 - ~/Library/Android/sdk/build-tools/27.0.3/zipalign -f -v 4 /Users/sg0218817/Private/Projects/MiksiuPro/mobile/platforms/android/app/build/outputs/apk/release/app-release-unsigned.apk ~/Private/Projects/MiksiuPro/build/MiksiuPro.apk
 
 
+## Google Maps
+
+- npm install @agm/core --save
+- https://angular-maps.com/guides/getting-started/
