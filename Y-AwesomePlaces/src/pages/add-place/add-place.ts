@@ -11,6 +11,7 @@ import {Location} from "../../models/location";
 })
 export class AddPlacePage {
 
+  locationSet = false;
   location: Location = {
     lat: 40.7624324,
     long: -73.9759827
@@ -29,7 +30,14 @@ export class AddPlacePage {
   }
 
   onOpenMap() {
-    const modal = this.modalCtrl.create(SetLocationPage, {location: this.location});
+    const params = {location: this.location, isSet: this.locationSet};
+    const modal = this.modalCtrl.create(SetLocationPage, params);
     modal.present();
+    modal.onDidDismiss(data => {
+      if (data) {
+        this.location = data.location;
+        this.locationSet = true;
+      }
+    })
   }
 }
