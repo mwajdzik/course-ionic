@@ -63,3 +63,7 @@
 
 - https://ionicframework.com/docs/native/geolocation/
 - https://ionicframework.com/docs/native/camera/
+
+## Debugging
+
+- http://cordova.apache.org/docs/en/latest/guide/platforms/android/index.html

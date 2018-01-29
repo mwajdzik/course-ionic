@@ -5,7 +5,10 @@ import {SetLocationPage} from "../set-location/set-location";
 import {Location} from "../../models/location";
 import {Geolocation} from "@ionic-native/geolocation";
 import {Camera, CameraOptions} from '@ionic-native/camera';
-import {PlacesServices} from "../../services/places";
+import {PlacesService} from "../../services/places";
+import {Entry, File, FileError} from "@ionic-native/file";
+
+declare var cordova: any;
 
 @Component({
   selector: 'page-add-place',
@@ -29,14 +32,15 @@ export class AddPlacePage {
     mediaType: this.camera.MediaType.PICTURE
   };
 
-  constructor(public navCtrl: NavController,
-              public navParams: NavParams,
+  constructor(private navCtrl: NavController,
+              private navParams: NavParams,
               private modalCtrl: ModalController,
               private loadingCtrl: LoadingController,
               private toastCtrl: ToastController,
-              private placesService: PlacesServices,
+              private placesService: PlacesService,
+              private geolocation: Geolocation,
               private camera: Camera,
-              private geolocation: Geolocation) {
+              private file: File) {
   }
 
   ionViewDidLoad() {
@@ -85,18 +89,27 @@ export class AddPlacePage {
   onTakePhoto() {
     this.camera.getPicture(this.options)
       .then((imageData) => {
-        this.imageUrl = imageData;
+        const name = imageData.replace(/^.*[\\\/]/, '');
+        const path = imageData.replace(/[^\/]*$/, '');
+        const newName = new Date().getUTCMilliseconds() + '.jpg';
+
+        this.file.moveFile(path, name, cordova.file.dataDirectory, newName)
+          .then((data: Entry) => {
+            this.imageUrl = data.nativeURL;
+            this.camera.cleanup();
+          })
+          .catch((err: FileError) => {
+            this.showError(err.message);
+            this.imageUrl = '';
+            this.camera.cleanup();
+          });
       }, (err) => {
         this.showError(err);
       });
   }
 
   showError(message: string) {
-    const toast = this.toastCtrl.create({
-      message: message,
-      duration: 5000
-    });
-
-    toast.present();
+    this.toastCtrl.create({message, duration: 5000})
+      .present();
   }
 }
