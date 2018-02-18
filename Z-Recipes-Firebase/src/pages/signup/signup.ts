@@ -1,5 +1,6 @@
 import {Component} from '@angular/core';
 import {NavController, NavParams} from 'ionic-angular';
+import {NgForm} from "@angular/forms";
 
 @Component({
   selector: 'page-signup',
@@ -11,5 +12,8 @@ export class SignupPage {
   }
 
   ionViewDidLoad() {
+  }
+
+  onSignUp(form: NgForm) {
   }
 }
