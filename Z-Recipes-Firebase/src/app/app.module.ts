@@ -14,6 +14,11 @@ import {ShoppingListService} from "../services/shopping-list";
 import {RecipeService} from "../services/recipe";
 import {SigninPage} from "../pages/signin/signin";
 import {SignupPage} from "../pages/signup/signup";
+import {AngularFireModule} from "angularfire2";
+import {AngularFirestoreModule} from "angularfire2/firestore";
+import {firebase} from "../../../.hidden/firebase";
+import {AngularFireAuthModule} from "angularfire2/auth";
+import {AuthService} from "../services/auth.service";
 
 @NgModule({
   declarations: [
@@ -28,7 +33,10 @@ import {SignupPage} from "../pages/signup/signup";
   ],
   imports: [
     BrowserModule,
-    IonicModule.forRoot(MyApp)
+    IonicModule.forRoot(MyApp),
+    AngularFireAuthModule,
+    AngularFirestoreModule,
+    AngularFireModule.initializeApp(firebase),
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -42,6 +50,7 @@ import {SignupPage} from "../pages/signup/signup";
     TabsPage
   ],
   providers: [
+    AuthService,
     RecipeService,
     ShoppingListService,
     StatusBar,
