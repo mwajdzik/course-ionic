@@ -3,7 +3,7 @@ import {AlertController, LoadingController, NavController, NavParams, PopoverCon
 import {NgForm} from '@angular/forms';
 import {ShoppingListService} from '../../services/shopping-list';
 import {Ingredient} from '../../model/Ingredient';
-import {OptionsPage} from './options/options';
+import {OptionsPage} from '../database-options/database-options';
 import 'rxjs/add/operator/take';
 
 @Component({
@@ -87,5 +87,7 @@ export class ShoppingListPage {
       message: errorMessage,
       buttons: ['OK']
     });
+
+    alert.present();
   }
 }

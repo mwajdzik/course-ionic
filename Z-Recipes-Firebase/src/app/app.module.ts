@@ -19,7 +19,7 @@ import {AngularFirestoreModule} from "angularfire2/firestore";
 import {firebase} from "../../../.hidden/firebase";
 import {AngularFireAuthModule} from "angularfire2/auth";
 import {AuthService} from "../services/auth.service";
-import {OptionsPage} from "../pages/shopping-list/options/options";
+import {OptionsPage} from "../pages/database-options/database-options";
 
 @NgModule({
   declarations: [
