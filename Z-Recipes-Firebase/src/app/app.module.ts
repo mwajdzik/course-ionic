@@ -19,6 +19,7 @@ import {AngularFirestoreModule} from "angularfire2/firestore";
 import {firebase} from "../../../.hidden/firebase";
 import {AngularFireAuthModule} from "angularfire2/auth";
 import {AuthService} from "../services/auth.service";
+import {OptionsPage} from "../pages/shopping-list/options/options";
 
 @NgModule({
   declarations: [
@@ -26,6 +27,7 @@ import {AuthService} from "../services/auth.service";
     RecipePage,
     RecipesPage,
     ShoppingListPage,
+    OptionsPage,
     EditRecipePage,
     SigninPage,
     SignupPage,
@@ -44,6 +46,7 @@ import {AuthService} from "../services/auth.service";
     RecipePage,
     RecipesPage,
     ShoppingListPage,
+    OptionsPage,
     EditRecipePage,
     SigninPage,
     SignupPage,

@@ -1,8 +1,10 @@
 import {Component} from '@angular/core';
-import {NavController, NavParams} from 'ionic-angular';
-import {NgForm} from "@angular/forms";
-import {ShoppingListService} from "../../services/shopping-list";
-import {Ingredient} from "../../model/Ingredient";
+import {AlertController, LoadingController, NavController, NavParams, PopoverController} from 'ionic-angular';
+import {NgForm} from '@angular/forms';
+import {ShoppingListService} from '../../services/shopping-list';
+import {Ingredient} from '../../model/Ingredient';
+import {OptionsPage} from './options/options';
+import 'rxjs/add/operator/take';
 
 @Component({
   selector: 'page-shopping-list',
@@ -14,6 +16,9 @@ export class ShoppingListPage {
 
   constructor(public navCtrl: NavController,
               public navParams: NavParams,
+              private alertCtrl: AlertController,
+              private loadingCtrl: LoadingController,
+              private popoverController: PopoverController,
               private shoppingListService: ShoppingListService) {
   }
 
@@ -35,5 +40,52 @@ export class ShoppingListPage {
   onDeleteItem(index: number) {
     this.shoppingListService.removeItem(index);
     this.loadItems();
+  }
+
+  onShowOptions(event: MouseEvent) {
+    const loading = this.loadingCtrl.create({content: 'Please wait...'});
+    const popover = this.popoverController.create(OptionsPage);
+    popover.present({ev: event});
+
+    popover.onDidDismiss(data => {
+      if (data == null) {
+        return;
+      }
+
+      if (data.action == 'load') {
+        loading.present();
+
+        this.shoppingListService.loadShoppingList()
+          .take(1)
+          .subscribe((data: any) => {
+            loading.dismiss();
+            this.ingredients = data.ingredients;
+          }, error => {
+            this.handleError(error.message);
+            loading.dismiss();
+          });
+      }
+
+      if (data.action == 'store') {
+        loading.present();
+
+        this.shoppingListService.storeShoppingList()
+          .then(data => {
+            loading.dismiss();
+          })
+          .catch(error => {
+            this.handleError(error.message);
+            loading.dismiss();
+          })
+      }
+    })
+  }
+
+  private handleError(errorMessage) {
+    const alert = this.alertCtrl.create({
+      title: 'An error occured',
+      message: errorMessage,
+      buttons: ['OK']
+    });
   }
 }
