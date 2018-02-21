@@ -38,17 +38,17 @@ export class ShoppingListService {
       })
     };
 
-    return this.db.collection('recipes').doc(uid)
+    return this.db.collection('recipes').doc(uid + 'shopping')
       .set(payload);
   }
 
   public loadShoppingList() {
     const uid = this.afAuth.auth.currentUser.uid;
 
-    return this.db.collection('recipes').doc(uid)
+    return this.db.collection('recipes').doc(uid + 'shopping')
       .valueChanges()
       .do((data: any) => {
-        this.ingredients = data.ingredients;
+        this.ingredients = data.ingredients || [];
       })
   }
 }

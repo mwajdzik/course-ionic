@@ -59,7 +59,7 @@ export class ShoppingListPage {
           .take(1)
           .subscribe((data: any) => {
             loading.dismiss();
-            this.ingredients = data.ingredients;
+            this.ingredients = data.ingredients || [];
           }, error => {
             this.handleError(error.message);
             loading.dismiss();
