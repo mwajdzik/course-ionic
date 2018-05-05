@@ -1,10 +1,9 @@
 import {Component, OnInit} from '@angular/core';
-import {AlertController, IonicPage, NavController, NavParams} from 'ionic-angular';
+import {AlertController, NavController, NavParams} from 'ionic-angular';
 import {Category} from "../../data/category.interface";
 import {Quote} from "../../data/quote.interface";
 import {QuotesService} from "../../services/quotes.service";
 
-@IonicPage()
 @Component({
   selector: 'page-quotes',
   templateUrl: 'quotes.html',

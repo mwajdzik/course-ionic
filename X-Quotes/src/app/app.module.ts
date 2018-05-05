@@ -13,6 +13,7 @@ import {QuotePage} from "../pages/quote/quote";
 import {TabsPage} from "../pages/tabs/tabs";
 import {QuotesService} from "../services/quotes.service";
 import {SettingsService} from "../services/settings.service";
+import {TextToSpeech} from "@ionic-native/text-to-speech";
 
 @NgModule({
   declarations: [
@@ -43,6 +44,7 @@ import {SettingsService} from "../services/settings.service";
     SplashScreen,
     QuotesService,
     SettingsService,
+    TextToSpeech,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })

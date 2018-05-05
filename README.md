@@ -48,9 +48,10 @@
 - Google Drive/IT/my-release-key.jks
 - keytool -genkey -v -keystore my-release-key.jks -keyalg RSA -keysize 2048 -validity 10000 -alias my-alias
 
-- jarsigner -verbose -sigalg SHA1withRSA -digestalg SHA1 -keystore ~/Google\ Drive/IT/my-release-key.jks /Users/sg0218817/Private/Projects/MiksiuPro/mobile/platforms/android/app/build/outputs/apk/release/app-release-unsigned.apk my-alias
-
-- ~/Library/Android/sdk/build-tools/27.0.3/zipalign -f -v 4 /Users/sg0218817/Private/Projects/MiksiuPro/mobile/platforms/android/app/build/outputs/apk/release/app-release-unsigned.apk ~/Private/Projects/MiksiuPro/build/MiksiuPro.apk
+- APK_PATH=...
+- OUTPUT_PATH=~/Google\ Drive/Apps/Quotes.apk
+- jarsigner -verbose -sigalg SHA1withRSA -digestalg SHA1 -keystore ~/Google\ Drive/IT/my-release-key.jks $APK_PATH my-alias
+- ~/Library/Android/sdk/build-tools/27.0.3/zipalign -f -v 4 $APK_PATH $OUTPUT_PATH
 
 
 ## Google Maps
