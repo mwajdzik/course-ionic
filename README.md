@@ -2,6 +2,14 @@
 
 ## Install
 
+https://ionicframework.com/docs/installation/cli
+https://ionicframework.com/docs/components/
+
+npm install -g ionic
+ionic start
+ionic serve
+
+
 - npm uninstall -g cordova ionic
 - npm install -g cordova ionic
 - https://ionicframework.com/getting-started
