@@ -17,6 +17,13 @@ ionic serve
 - input - ion-button, ion-input, ion-select, ...
 
 
+## Generate
+
+ionic generate
+ionic generate page recipes
+ionic generate page recipes/recipe-detail
+ionic generate service recipes/recipes
+
 -----------------------------------------------------------------------------------------------
 
 - npm uninstall -g cordova ionic
