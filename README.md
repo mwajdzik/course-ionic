@@ -10,6 +10,15 @@ ionic start
 ionic serve
 
 
+## Components
+
+- output - ion-img, ion-badg, ion-label, ion-title, ...
+- layout - ion-grid, ion-row, ion-col, ion-list, ion-card, ...
+- input - ion-button, ion-input, ion-select, ...
+
+
+-----------------------------------------------------------------------------------------------
+
 - npm uninstall -g cordova ionic
 - npm install -g cordova ionic
 - https://ionicframework.com/getting-started
