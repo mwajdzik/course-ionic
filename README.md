@@ -24,22 +24,6 @@ ionic generate page recipes
 ionic generate page recipes/recipe-detail
 ionic generate service recipes/recipes
 
------------------------------------------------------------------------------------------------
-
-- npm uninstall -g cordova ionic
-- npm install -g cordova ionic
-- https://ionicframework.com/getting-started
-
-## Start
-
-- ionic start firstapp --type=ionic-angular
-- ionic serve
-- ionic generate page Name
-
-## Routing
-
-- Ionic DOES NOT use Angular Router
-- a stack of Pages is used (can be Single Stack or Multiple Stacks if tabs are used)
 
 ## Lifecycle
 
@@ -52,6 +36,7 @@ ionic generate service recipes/recipes
 - ionViewDidLeave 
 - ionViewWillUnload - page about to be destroyed
 
+
 ## View hooks - can be used eg. with modals
 
 - willEnter
@@ -61,6 +46,7 @@ ionic generate service recipes/recipes
 - willUnload
 - onWillDismiss
 - onDidDismiss 
+
 
 ## Deploy
 
